@@ -1,27 +1,12 @@
-import fs from 'fs';
-import path from 'path';
-import utilStyles from '../../styles/utils.module.css';
-import Layout from '../../components/layout';
-import { getAllPostIds, getPostData } from '../../lib/posts';
-import Head from 'next/head';
-import Date from '../../components/date';
+import utilStyles from '../styles/utils.module.css';
+import Layout from './layout';
+import { getPostData } from '../lib/posts';
 import React, { useState } from 'react';
-import { Formik } from 'formik';
-import { Form, Field, ErrorMessage } from 'formik';
-import { render } from 'react-dom';
 import {Web3Storage} from 'web3.storage';
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, child, push, update, onValue } from "firebase/database";
-import { doc, onSnapshot } from "firebase/firestore";
-import { LineAxisOutlined } from '@mui/icons-material';
-import axios from 'axios';
-import { setDefaultOptions } from 'date-fns';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
 
 const db1 = initializeApp({
   // landing
@@ -57,14 +42,6 @@ export async function getStaticProps({ params }) {
       postData,
     },
   };
-}
-
-export async function getStaticPaths() {
-    const paths = getAllPostIds();
-    return {
-      paths,
-      fallback: false,
-    };
 }
 
 export default class Post extends React.Component {

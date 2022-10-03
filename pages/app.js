@@ -2,18 +2,14 @@ import React, { useState } from 'react';
 import Head from 'next/head';
 import Layout, { siteTitle } from '../components/layout';
 import utilStyles from '../styles/utils.module.css';
-import { getSortedPostsData } from '../lib/posts';
 import Link from 'next/link';
-import Date from '../components/date';
-import {useTheme} from 'next-themes'
 import {Grid} from '@mui/material'
-import Feed from './posts/feed.js'
-import Post from './posts/post.js'
+import Feed from '../components/feed.js'
+import Post from '../components/post.js'
 import LOGO from '../assets/sigil.png'
 import Image from 'next/image'
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, child, push, update, onValue } from "firebase/database";
-import { doc, onSnapshot } from "firebase/firestore";
 
 const db1 = initializeApp({
   // landing

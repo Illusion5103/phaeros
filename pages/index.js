@@ -2,12 +2,7 @@ import React, { useState } from 'react';
 import Head from 'next/head';
 import Layout, { siteTitle } from '../components/layout';
 import utilStyles from '../styles/utils.module.css';
-import { getSortedPostsData } from '../lib/posts';
 import Link from 'next/link';
-import Date from '../components/date';
-import {useTheme} from 'next-themes'
-import {Grid} from '@mui/material'
-import Feed from './posts/feed.js'
 import Globe from '../components/globe'
 import {Typography, Container, Button, Box} from '@mui/material'
 import LOGO from '../assets/sigil.png'

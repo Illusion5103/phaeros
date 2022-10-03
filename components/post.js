@@ -131,6 +131,7 @@ export default class Post extends React.Component {
             color: "white",
             padding: 2,
             margin: 2,
+            borderRadius: 2,
           }}>
             <form onSubmit={this.handleSubmit} className={`${utilStyles.form}`}>
               <textarea type="text" value={this.state.newData} onChange={this.handleChange} class="rounded-md appearance-none relative inline-block w-full h-fit px-3 py-2 border border-gray-300 placeholder-gray-500 text-white-900 focus:outline-none focus:ring-green-800 focus:border-green-700 focus:z-10 sm:text-md"/>
@@ -152,6 +153,7 @@ export default class Post extends React.Component {
                 color: "white",
                 padding: 2,
                 margin: 2,
+                borderRadius: 2,
               }}>
               <form onSubmit={this.handleNew} className={`${utilStyles.form}`}>
               <div>Submission saved! Here is the IPFS CID for reference: {this.state.submitCID} </div>

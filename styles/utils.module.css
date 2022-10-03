@@ -85,6 +85,25 @@
     font-size: 1rem;
   }
 
+  .supporting {
+    display: inline-block;
+    width: auto;
+    border: 1px solid white;
+  }
+
+  .supportingContainer {
+    display: block;
+    border: 1px solid white;
+    border-radius: 7px;
+    margin-top: 10px;
+    padding: 10px;
+  }
+
+  .supportingNew {
+    color: white !important;
+    text-decoration: none !important;
+  }
+
   .investigationTopic {
     height: 100vh;
     font-size: 1.2rem;

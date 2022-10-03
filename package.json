@@ -19,6 +19,7 @@
     "fs": "0.0.1-security",
     "gray-matter": "^4.0.3",
     "mui": "0.0.1",
+    "muicss": "^0.10.3",
     "next": "latest",
     "next-themes": "^0.2.0",
     "react": "17.0.2",

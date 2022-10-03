@@ -60,7 +60,6 @@ export default function Home() {
         <Link href="/app">
           <Button size='large' variant="outlined" color="success"
             className="Explore-Bounties" sx={{
-              backgroundColor: "green",
               fontWeight: "bold",
             }}>
             Connect

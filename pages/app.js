@@ -45,7 +45,8 @@ export default class Home extends React.Component {
       id: 'Taiwancol',
       posts: [],
       count: 0,
-      database: 'db1'
+      database: 'db1',
+      intelFlag: 0,
     }
   }
   
@@ -89,15 +90,15 @@ export default class Home extends React.Component {
     this.setState({mode: mode});
     if (this.state.topic == 'Taiwan') {
       if (mode == 'Collection') {
-        this.setState({database: 'db2'});
+        this.setState({database: 'db2', intelFlag: 0});
       } else {
-        this.setState({database: 'db3'});
+        this.setState({database: 'db3', intelFlag: 1});
       }
     } else if (this.state.topic == 'Markets') {
       if (mode == 'Collection') {
-        this.setState({database: 'db4'});
+        this.setState({database: 'db4', intelFlag: 0});
       } else {
-        this.setState({database: 'db5'});
+        this.setState({database: 'db5', intelFlag: 1});
       }
     }
   }
@@ -282,7 +283,7 @@ export default class Home extends React.Component {
                 <Post postData={this.state.count} database={this.state.database}/>
 
                 {this.state.posts.map((element, index) => (
-                    <Feed postData={index} database={this.state.database}/>
+                    <Feed postData={index} database={this.state.database} intelFlag={this.state.intelFlag}/>
                 ))}
             </div>
           </div>

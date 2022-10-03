@@ -5,7 +5,8 @@ import {Web3Storage} from 'web3.storage';
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, child, push, update, onValue } from "firebase/database";
 import axios from 'axios';
-import Card from '@mui/material/Card';
+import { Card, Box } from '@mui/material';
+import Supporting from './supporting.js'
 
 const db1 = initializeApp({
   // landing
@@ -143,6 +144,7 @@ export default class Post extends React.Component {
                 color: "white",
                 padding: 2,
                 margin: 2,
+                borderRadius: 2,
               }}> 
                   Loading data from IPFS...
               </Card>
@@ -183,24 +185,56 @@ export default class Post extends React.Component {
             </form>
           </Layout>
 
-        )} else {
+        )} else if (this.props.intelFlag == 1) {
 
-        return (
-          <Layout>
-            <article >
-              <Card sx={{
-                backgroundColor: "black",
-                color: "white",
-                padding: 2,
-                margin: 2,
-              }}>
-                <div dangerouslySetInnerHTML={{ __html: this.state.content }} />
-                <h1>{this.props.cid}</h1>
-              </Card>
-              {/* <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 mx-1 rounded" onClick={() => {this.setState({editFlag: 1})}} >Edit</button> */}
-            </article>
-          </Layout>
-    )}
+          return (
+            <Layout>
+              <article >
+                <Card sx={{
+                  backgroundColor: "black",
+                  color: "white",
+                  padding: 2,
+                  margin: 2,
+                  borderRadius: 2,
+                }}>
+                  <Box sx={{
+                    color: 'gray',
+                  }}>
+                    Analysis #{this.props.postData + 1}
+                  </Box>
+                  <div dangerouslySetInnerHTML={{ __html: this.state.content }} />
+                  <Supporting database={this.props.database} current={this.props.postData + 1}/>
+                </Card>
+                {/* <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 mx-1 rounded" onClick={() => {this.setState({editFlag: 1})}} >Edit</button> */}
+              </article>
+            </Layout>
+          )
+
+        } else {
+
+          return (
+            <Layout>
+              <article >
+                <Card sx={{
+                  backgroundColor: "black",
+                  color: "white",
+                  padding: 2,
+                  margin: 2,
+                  borderRadius: 2
+                }}>
+                  <Box sx={{
+                    color: 'gray',
+                  }}>
+                    Intel #{this.props.postData + 1}
+                  </Box>
+                  <div dangerouslySetInnerHTML={{ __html: this.state.content }} />
+
+                </Card>
+                {/* <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 mx-1 rounded" onClick={() => {this.setState({editFlag: 1})}} >Edit</button> */}
+              </article>
+            </Layout>
+          )
+        }
   }
 }
   

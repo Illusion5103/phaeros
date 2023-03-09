@@ -1,3 +1,3 @@
 # Phaeros
 
-Bounty platform for crowdsourced intelligence collection and analysis
+Protocol and user interface for distributed intelligence collection and analysis. 
